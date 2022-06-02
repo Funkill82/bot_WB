@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import telebot
+import pandas as pd
 
 chrome_options = Options()
 chrome_options.add_argument("--disable-extensions")
@@ -37,6 +38,7 @@ def pars(drivers, x):
             if 'Сегодня' in temp:
                 send_telegram(temp)
 
+
 def send_telegram(text: str):
     """ Отправка комментариев в телеграм канал """
     bot = telebot.TeleBot('5301069444:AAFRT7o9Uue5J_BOP8-d6gYac2Cv0TdQKB0')
@@ -44,15 +46,13 @@ def send_telegram(text: str):
     bot.send_message(CHANNEL_NAME, text)
 
 
-
-with open('1.txt', 'r', encoding='utf-8') as f:
-    list_product = []
-    for i in f:
-        list_product.append(i[:8])
+excel_data = pd.read_excel('Книга1 (1) (1) (2) (2).xlsx', header=None)
+data = pd.DataFrame(excel_data)
+list_product = data[0].tolist()
 
 driver = webdriver.Chrome()
 for i in list_product:
-    URL_TEMPLATE = "https://www.wildberries.ru/catalog/" + i + "/detail.aspx"
+    URL_TEMPLATE = "https://www.wildberries.ru/catalog/" + str(i) + "/detail.aspx"
     driver.get(URL_TEMPLATE)
     scrol()
     for item in range(1, 3):

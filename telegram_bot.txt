@@ -1,0 +1,35 @@
+name for your bot    Bot_v1.2022
+username  Funkill82_bot
+token: 5301069444:AAFRT7o9Uue5J_BOP8-d6gYac2Cv0TdQKB0
+
+
+----------------------
+pip install chromedriver-binary
+pip install selenium
+
+pip install beautifulsoup4 
+pip install requests
+pip install pandas
+
+pip install pytelegrambotapi
+---------------------
+AWS docker
+https://tproger.ru/articles/telegram-bot-create-and-deploy/
+---------------------
+Redis  VirtualMachin
+https://habr.com/ru/post/549962/
+---------------------
+echo,wiki, fact-pogovorka, chat_bot
+https://xakep.ru/2021/11/28/python-telegram-bots/
+---------------------------------------------------
+Клавиатура и кнопки
+https://pocketadmin.tech/ru/telegram-bot-%D0%BD%D0%B0-python/
+----------------------------------------
+еда
+https://dev-gang.ru/article/ja-postroil-telegrafnyi-bot-dlja-borby-s-pisczevymi-othodami-vot-kak-eto-delaetsja-inaqfmq470/
+---------------------------------------------------------
+Здравствуйте. Сразу несколько замечаний по реализации бота.
+1. Вы должны предоставить готовое решение, которое может использовать клиент - не программист после чтения внятной и простой инструкции. Лишних файлов в проекте не должно быть много, желательно, чтобы они отсутствовали совсем. Для решений на Python необходимо наличие requirements.txt (не знаете, что это такое - гугл в помощь)
+2. Использование exel файла для получения входных данных - это обязательное условие выполнения задания. Представьте, что продавец на ВБ и у вас несколько сотен товаров. Скорее всего вы используете в работе exel и получить колонку с сотней СКУ очень легко и быстро, а "скормить" эту сотню боту - тупая работа CTR+C CTR+V на час.
+3. Опишите или реализуйте метод регулярного запуска, если это важно, то опишите, на какой ОС необходимо запускать проект.
+4. И проверьте, запустится ли ваш проект на чужом компьютере
