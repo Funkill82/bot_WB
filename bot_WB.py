@@ -49,12 +49,18 @@ def send_telegram(text: str):
 excel_data = pd.read_excel('Книга1 (1) (1) (2) (2).xlsx', header=None)
 data = pd.DataFrame(excel_data)
 list_product = data[0].tolist()
+try:
+    driver = webdriver.Chrome()
+    for i in list_product:
+        URL_TEMPLATE = "https://www.wildberries.ru/catalog/" + str(i) + "/detail.aspx"
+        driver.get(URL_TEMPLATE)
+        scrol()
+        for item in range(1, 3):
+            pars(driver, item)
+except Exception as e:
+    print(e)
 
-driver = webdriver.Chrome()
-for i in list_product:
-    URL_TEMPLATE = "https://www.wildberries.ru/catalog/" + str(i) + "/detail.aspx"
-    driver.get(URL_TEMPLATE)
-    scrol()
-    for item in range(1, 3):
-        pars(driver, item)
-driver.close()
+
+finally:
+    driver.close()
+    driver.quit()
