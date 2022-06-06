@@ -57,3 +57,4 @@ for i in list_product:
     scrol()
     for item in range(1, 3):
         pars(driver, item)
+driver.close()
